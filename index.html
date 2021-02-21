@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+</head>
+
+<body>
+  <main>
+    <div class="faq-card">
+      <!-- Mobile illustration -->
+      <div class="faq-illustration-wrapper">
+        <img class="faq-illustration" src="/images/illustration-woman-online-mobile.svg" alt="">
+        <img class="faq-mobile-pattern" src="/images/bg-pattern-mobile.svg" alt="">
+      </div>
+
+      <!-- Desktop illustration -->
+      <div class="faq-illustration-desktop">
+        <img class="illustration-desktop" src="/images/illustration-woman-online-desktop.svg" alt="">
+      </div>
+
+      <div class="fixed-wrapper">
+        <img class="fixed box-img" src="/images/illustration-box-desktop.svg" alt="">
+      </div>
+
+      <section class="faq-list">
+        <h1>Faq</h1>
+
+        <div class="faq">
+          <div class="faq-title-wrapper">
+            <h2>How many team members can I invite?</h2>
+            <img src="/images/icon-arrow-down.svg" alt="">
+          </div>
+          <p>You can invite up to 2 additional users on the Free plan. There is no limit on team members for the
+            Premium
+            plan.</p>
+        </div>
+
+        <div class="faq">
+          <div class="faq-title-wrapper">
+            <h2>What is the maximum file upload size?</h2>
+            <img src="/images/icon-arrow-down.svg" alt="">
+          </div>
+          <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+        </div>
+
+        <div class="faq">
+          <div class="faq-title-wrapper">
+            <h2>How do I reset my password?</h2>
+            <img src="/images/icon-arrow-down.svg" alt="">
+          </div>
+          <p>Click “Forgot password” from the login page or “Change password” from your profile page. A reset link
+            will
+            be emailed to you.</p>
+        </div>
+
+        <div class="faq">
+          <div class="faq-title-wrapper">
+            <h2>Can I cancel my subscription?</h2>
+            <img src="/images/icon-arrow-down.svg" alt="">
+          </div>
+          <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+        </div>
+
+        <div class="faq">
+          <div class="faq-title-wrapper">
+            <h2>Do you provide additional support?</h2>
+            <img src="/images/icon-arrow-down.svg" alt="">
+          </div>
+          <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+        </div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <script>
+    const faqs = document.querySelectorAll('.faq')
+    let last = undefined
+
+    faqs.forEach((faq) => {
+      faq.onclick = (e) => {
+        // Collapse all elements
+        faqs.forEach((el) => { collapse(el) })
+
+      if (!(e.target == last)) {
+        faq.querySelector('p').classList.add('show-text')
+        faq.querySelector('h2').classList.add('text-bold')
+        faq.querySelector('img').classList.add('arrow-up')
+      } 
+      last = e.target
+      }
+
+
+
+      // Hover effect with box animation on desktop
+      faq.querySelector('.faq-title-wrapper').onmouseover = () => {
+        document.querySelector('.fixed-wrapper').classList.add('box-out')
+        faq.querySelector('.faq-title-wrapper h2').classList.add('hover-color')
+      }
+      faq.querySelector('.faq-title-wrapper').onmouseout = () => {
+        document.querySelector('.fixed-wrapper').classList.remove('box-out')
+        faq.querySelector('.faq-title-wrapper h2').classList.remove('hover-color')
+      }
+    })
+
+    function collapse(el) {
+      el.querySelector('p').classList.remove('show-text')
+      el.querySelector('h2').classList.remove('text-bold')
+      el.querySelector('img').classList.remove('arrow-up')
+    }
+
+  </script>
+</body>
+
+</html>
