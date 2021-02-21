@@ -16,5 +16,8 @@
 
 .prettierignore
 
+<<<<<<< HEAD
 /scss
 /design
+=======
+>>>>>>> dev
