@@ -140,9 +140,6 @@ main {
 }
 
 // Hover states
-.box-out {
-  left: -13rem;
-}
 .hover-color {
   color: $soft-red;
 }
@@ -215,5 +212,9 @@ main {
       margin-top: 0;
       text-align-last: left;
     }
+  }
+
+  .box-out {
+    left: -13rem;
   }
 }

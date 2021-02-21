@@ -135,10 +135,6 @@ main {
   display: none;
 }
 
-.box-out {
-  left: -13rem;
-}
-
 .hover-color {
   color: #f47c57;
 }
@@ -203,5 +199,8 @@ main {
   .faq-list h1 {
     margin-top: 0;
     text-align-last: left;
+  }
+  .box-out {
+    left: -13rem;
   }
 }
